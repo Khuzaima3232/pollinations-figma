@@ -78,7 +78,12 @@ async function placeImage(hash: string): Promise<string> {
 const selectedNode = (): SceneNode | null =>
 	figma.currentPage.selection.length > 0 ? figma.currentPage.selection[0] : null;
 
-figma.ui.onmessage = async (msg: { type: string; bytes?: string; text?: string; token?: string }) => {
+figma.ui.onmessage = async (msg: {
+	type: string;
+	bytes?: string;
+	text?: string;
+	token?: string;
+}) => {
 	try {
 		if (msg.type === "ui-ready") {
 			figma.ui.postMessage({ type: "token", token: await loadToken() });

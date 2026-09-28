@@ -57,7 +57,7 @@ async function beginDeviceFlow() {
 			headers: { "Content-Type": "application/json" },
 			body: JSON.stringify({ device_code: code.device_code }),
 		});
-		if (result.access_token && result.access_token.startsWith("sk_")) return result.access_token;
+		if (result.access_token?.startsWith("sk_")) return result.access_token;
 		if (result.error === "slow_down") interval += 5;
 		else if (result.error === "access_denied") throw new Error("Authorization declined.");
 		else if (result.error === "expired_token") break;
