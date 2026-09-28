@@ -1,0 +1,13 @@
+{
+	"name": "Pollinations",
+	"id": "pollinations-image-generation",
+	"api": "1.0.0",
+	"main": "code.js",
+	"ui": "ui.built.html",
+	"editorType": ["figma"],
+	"documentAccess": "dynamic-page",
+	"networkAccess": {
+		"allowedDomains": ["https://gen.pollinations.ai", "https://enter.pollinations.ai"],
+		"reasoning": "Generates images with your own Pollinations account and approves the connection."
+	}
+}

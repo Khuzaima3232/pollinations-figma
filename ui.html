@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Pollinations</title>
+<style>
+  :root { color-scheme: light dark; }
+  body { font: 12px/1.5 Inter, system-ui, sans-serif; margin: 0; padding: 12px; }
+  h3 { margin: 0 0 8px; font-size: 13px; }
+  label { display: block; margin-top: 10px; font-weight: 600; }
+  textarea, input, select { width: 100%; box-sizing: border-box; font: inherit; padding: 6px; }
+  textarea { min-height: 64px; resize: vertical; }
+  .row { display: flex; gap: 6px; margin-top: 12px; }
+  button { flex: 1; font: inherit; padding: 7px 10px; cursor: pointer; }
+  #status { margin-top: 12px; min-height: 16px; color: #666; }
+  #status[data-kind="error"] { color: #c0392b; }
+  .hint { color: #888; margin-top: 4px; }
+</style>
+</head>
+<body>
+  <h3>Pollinations</h3>
+
+  <label for="appKey">App key (optional)</label>
+  <input id="appKey" placeholder="pk_… (so usage is attributed to this plugin)" />
+  <div class="hint">A publishable key only. Your account is approved in the browser.</div>
+
+  <div class="row">
+    <button id="connect">Connect account</button>
+    <button id="disconnect">Disconnect</button>
+  </div>
+
+  <label for="prompt">Prompt</label>
+  <textarea id="prompt" placeholder="Describe the image"></textarea>
+
+  <label for="model">Image model</label>
+  <select id="model"></select>
+
+  <div class="row">
+    <button id="generate">Generate image</button>
+    <button id="edit">Edit selection</button>
+  </div>
+
+  <label for="textModel">Text model</label>
+  <select id="textModel"></select>
+  <div class="row">
+    <button id="text">Generate text</button>
+  </div>
+
+  <label for="output">Output</label>
+  <textarea id="output" readonly></textarea>
+
+  <div id="status">Not connected.</div>
+
+  <script>
+/*__POLLINATIONS_UI_SCRIPT__*/
+  </script>
+</body>
+</html>
